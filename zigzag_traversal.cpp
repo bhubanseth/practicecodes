@@ -1,11 +1,3 @@
-/******************************************************************************
-
-                              Online C++ Compiler.
-               Code, Compile, Run and Debug C++ program online.
-Write your code in this editor and press "Run" button to compile and execute it.
-
-*******************************************************************************/
-
 #include <iostream>
 #include <memory>
 #include <queue>
@@ -17,11 +9,11 @@ Write your code in this editor and press "Run" button to compile and execute it.
 class TreeNode {
     public:
         TreeNode(int value) : value_(value) {}
-        
+
         void AddChild(std::unique_ptr<TreeNode> child) {
             children_.push_front(std::move(child));
         }
-        
+
         void ZigzagPrint() const {
             std::stack<const TreeNode*> stack;
             std::stack<const TreeNode*> new_stack;
@@ -55,9 +47,9 @@ class TreeNode {
                 reverse = !reverse;
             }
         }
+
     private:
-    
-        int value_;
+        const int value_;
         std::list<std::unique_ptr<TreeNode>> children_;
 };
 
@@ -80,4 +72,3 @@ int main()
 
     return 0;
 }
-
